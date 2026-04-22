@@ -12,7 +12,8 @@ import {
   Check,
   Map,
   Menu,
-  X
+  X,
+  GraduationCap
 } from "lucide-react";
 import { ComingSoon } from "./components/ComingSoon";
 
@@ -189,7 +190,7 @@ const Features = ({ onComingSoon }: { onComingSoon: (t?: string) => void }) => (
           We prioritize heart over hype. Our platform is built to foster human connection, not to gamify your social life for rewards.
         </p>
       </div>
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {[
           {
             icon: Rocket,
@@ -210,6 +211,13 @@ const Features = ({ onComingSoon }: { onComingSoon: (t?: string) => void }) => (
             title: "Simple Connection",
             desc: "No complicated algorithms. Just real people looking for real conversations in the physical world.",
             color: "bg-tertiary-container",
+            border: false
+          },
+          {
+            icon: GraduationCap,
+            title: "Academic Ally",
+            desc: "Find the perfect partners for graduation projects and campus study groups in your local community.",
+            color: "bg-primary-fixed/20",
             border: false
           }
         ].map((feature, idx) => (
@@ -465,6 +473,7 @@ const Footer = ({ onComingSoon }: { onComingSoon: (t?: string) => void }) => (
 );
 
 export default function App() {
+  console.log("Sidequest App Mounting...");
   const [comingSoonTitle, setComingSoonTitle] = useState<string | null>(null);
 
   const handleComingSoon = (title?: string) => {
